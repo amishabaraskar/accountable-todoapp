@@ -41,19 +41,20 @@ const acceptRequest=async (request_whole:RequestType )=>{
 
 
     return ( <>
+    {requests?.length ==0 ?<h1>No requests are received</h1> :
         <ul>
         {requests?.map((request)=>{
 
         return(
-        <li className=" flex justify-between text-left font-medium text-lg py-3 px-2 my-1 w-full rounded-md border-b-gray-600 border-2  ">
+        <li className=" flex justify-between text-left font-medium text-md py-2 px-2 my-7 w-full rounded-md border-b-gray-600 bordder-b-2  shadow-md border-l-4 border-l-gray-600  ">
         {request.from_username}
-        <button  className=" hover:bg-slate-300 border-indigo-800 border-1 rounded-md text-sm px-2" 
+        <button   className="hover:bg-pink-900 h-7 w-28 text-white bg-pink-700  rounded-full text-sm  px-2 "
         onClick={ ()=>acceptRequest(request)}>Accept request</button>
         </li>
         )
     })}
     
-    </ul></>
+    </ul>}</>
     );
 }
 

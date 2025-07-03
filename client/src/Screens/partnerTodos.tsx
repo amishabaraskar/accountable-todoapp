@@ -7,14 +7,21 @@ import { TodoType } from "../interfaces/model";
 
 function PartnerTodos() {
     const [partnertodos,setPartnerTodos]=useState<null|TodoType[]>([])
+        const [partnername,setPartnerName]=useState<null|String>("")
+
     const partner_id = useSelector((state:{token:TokenSliceState}) => {
         return state?.token?.partner_id;
       });
+      const setpartnername=(name:String)=>{
+setPartnerName(name)
+      }
+
       useEffect( ()=>{
         async function getdata(){
             const partnertodos =await axios.get(`http://localhost:5000/todos/${partner_id}`).then(res=> {return res.data})   
             setPartnerTodos(partnertodos)
             console.log(partnertodos)
+
         }
         getdata()    
         }
@@ -22,10 +29,8 @@ function PartnerTodos() {
 
     return ( 
     <div>
-        <h1 className="text-3xl my-3 text-left font-bold" >Partner's Todos</h1>
-<hr className="mb-1"/>
-<hr/>
-<PartnerTodoList todos={partnertodos?.filter((todo)=>{return(todo.checked == false)})}/>
+            <h1 className="text-3xl text-gray-700 my-3 text-left font-bold" >{partnername}'s Todos</h1>
+<PartnerTodoList setpartnername = {setpartnername} todos={partnertodos?.filter((todo)=>{return(todo.checked == false)})}/>
 
     </div>
       );

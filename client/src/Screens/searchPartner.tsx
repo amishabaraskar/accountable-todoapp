@@ -11,8 +11,11 @@ function SearchPartner(){
 
     return (
         <div>
-            <h1>SearchPartner</h1>
+            <h1 className="text-xl my-3 text-left text-gray-700 font-semibold">Received Requests</h1>
             <RequestList curr_user={logged_in_user}/>
+<hr className="text-gray-500 my-4 border-dashed border-2"/>
+        <h1 className="text-xl my-3 text-left text-gray-700 font-semibold">Send accountable partner request</h1>
+
             <UserList curr_user={logged_in_user}/>
         </div>
     )

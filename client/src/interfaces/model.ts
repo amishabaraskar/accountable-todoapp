@@ -4,7 +4,8 @@ _id:string,
     task_name:string,
     task_desc:string,
     due_date:string,
-    checked:boolean
+    checked:boolean,
+    important:boolean
 }
 
 export interface UserType {

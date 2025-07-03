@@ -5,13 +5,8 @@ import { useSelector } from "react-redux";
 import { TokenSliceState } from "../store/slices/token";
 import axios from "axios";
 
-interface props {
-    show:boolean
-//   todos:null| TodoType[],
-//   onChangeBox:(id:string)=>Promise<void>
-}
 
-export default function TodoList({show}:props){
+export default function ImpTodoList(){
         const [todos,setTodos]=useState<null| TodoType[]>([])
     // const [partnertodos,setPartnerTodos]=useState([])
 
@@ -28,7 +23,7 @@ export default function TodoList({show}:props){
                 },
               })
               const response = await axios.get(`http://localhost:5000/todos/${token}`).then(res=> {return res.data})
-              setTodos(response)
+              setTodos(response.filter((task: TodoType)=>task.important == true ))
     
                       
              }
@@ -43,7 +38,7 @@ export default function TodoList({show}:props){
                 attr
               })
               const response = await axios.get(`http://localhost:5000/todos/${token}`).then(res=> {return res.data})
-              setTodos(response)
+              setTodos(response.filter((task: TodoType)=>task.important == true ))
     
                       
              }
@@ -52,18 +47,18 @@ export default function TodoList({show}:props){
             async function getdata(){
                 const todos=await axios.get(`http://localhost:5000/todos/${token}`).then(res=> {return res.data})
                 // const partnertodos =await axios.get(`http://localhost:5000/todos/${partner_id}`).then(res=> {return res.data})   
-                setTodos(todos)
+              setTodos(todos.filter((task: TodoType)=>task.important == true ))
                 // setPartnerTodos(partnertodos)
                 // console.log(todos)
                 // console.log(partnertodos)
             }
             getdata()    
             }
-        ,[show])
+        ,[])
 return(
     <>
-    <div className=" mx-14   my-10 grid grid-cols-4  gap-4 content-start ">
-        {todos?.map((todo)=>{
+    <div className=" mx-3 my-10 grid grid-cols-4  gap-4 content-start ">
+        {todos?.length ==0 ? <h2>No important tasks to display</h2>: todos?.map((todo)=>{
         return(
         // <TodoCard todo={todo} onChangeBox={onChangeBox}/>
         <div className=" flex flex-col shadow-2xl h-60 p-4 rounded relative" key={todo._id}>

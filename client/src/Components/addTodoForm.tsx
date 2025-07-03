@@ -29,7 +29,7 @@ const Form = (props:{closeModal:Function}) => {
     <Formik
       validationSchema={formSchema}
       onSubmit={async (values, { resetForm }) => {
-        const todo={...values,checked: false,user_id:token}
+        const todo={...values,checked: false,important:false,user_id:token}
         console.log(todo)
          await axios.post('http://localhost:5000/todos', {
             headers: {

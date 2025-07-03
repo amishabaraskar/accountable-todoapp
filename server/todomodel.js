@@ -8,7 +8,8 @@ const TodoSchema = new mongoose.Schema({
     type: Date, 
     default: Date.now,
     get: (date)=> date.toLocaleDateString("en-US") },
-    checked:Boolean
+    checked:Boolean,
+    important:Boolean
 })
 
 
