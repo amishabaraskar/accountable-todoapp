@@ -1,5 +1,3 @@
-import {  useState } from "react";
-import TodoList from "../Components/todoList";
 import ImpTodoList from "../Components/impTodoList";
 
 function Important(){

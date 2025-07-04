@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { clear } from "../store/slices/token";
 import { Menu } from "lucide-react";
-export default function Header({show,title,toggleSidebar}) {
+export default function Header({show,title,toggleSidebar}:{show:boolean,title:string,toggleSidebar:()=>void}) {
     const dispatch=useDispatch()
 
     return (

@@ -27,7 +27,7 @@ const SignUpForm = ({setCurrentForm}:{setCurrentForm:Dispatch<SetStateAction<str
    
   return (
     <>
-    <Header title="Todo App" />
+    <Header show={false} toggleSidebar={()=>console.log("xyz")} title="Todo App" />
 
     <Formik
       validationSchema={formSchema}

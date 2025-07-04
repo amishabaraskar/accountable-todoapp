@@ -4,7 +4,7 @@ import { TokenSliceState } from "../store/slices/token";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import { TodoType } from "../interfaces/model";
-import { Bell, Calendar } from 'lucide-react';
+import {  Calendar } from 'lucide-react';
 
 interface props {
   todos:undefined| TodoType[],

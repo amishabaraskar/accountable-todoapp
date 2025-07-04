@@ -1,7 +1,7 @@
 import { X } from "lucide-react";
 import { Link } from "react-router-dom";
 
-function Sidebar({ show, toggleSidebar }) {
+function Sidebar({ show, toggleSidebar }:{show:boolean, toggleSidebar:()=>void}) {
     console.log(show)
   return (
     
