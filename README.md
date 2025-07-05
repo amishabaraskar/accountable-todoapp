@@ -23,31 +23,25 @@ A collaborative productivity app designed to keep you organized, motivated, and 
 ## 📸 Screenshots
 
 Home page
-![home_page](https://github.com/user-attachments/assets/d48c5d0d-331f-49ae-a7b6-37a73c32cf1d)
+![home_page](https://github.com/user-attachments/assets/e548ba6c-fd03-4a1f-bc89-0b00cc64717d)
 
 Menu Sidebar
-![sidebar](https://github.com/user-attachments/assets/f6f2fe6c-1b13-4368-b1dd-cc537bad5b19)
+![sidebar](https://github.com/user-attachments/assets/82208cec-9051-4fae-99c7-bb01317ee2f1)
 
 Important tasks page
-![imp_tasks](https://github.com/user-attachments/assets/8b414f5c-4b07-40db-9f6e-0501c815bd32)
+![imp_tasks](https://github.com/user-attachments/assets/769b9cc0-8538-45a6-85db-1649d82b706f)
 
 Partner todos page
-![partner_todos](https://github.com/user-attachments/assets/cb6b7dca-fa5f-41a1-bd59-9e09303c309b)
+![partner_todos](https://github.com/user-attachments/assets/b0a399f1-f68e-4baa-afb5-a3fab59bf373)
 
 Search partner page
-![search_partner](https://github.com/user-attachments/assets/5def38ac-f9a9-409c-84d5-4f1e027276ec)
+![search_partner](https://github.com/user-attachments/assets/4adc4ee6-7185-4280-84ce-724016d8c875)
 
 Add todo form
-![add_todo](https://github.com/user-attachments/assets/6f237b46-3405-45b8-b460-7a1ac5879d7a)
+![add_todo](https://github.com/user-attachments/assets/ab74396e-25fa-4488-ad47-136e3ae35bcc)
 
 Reminder mail
-![Reminder_mail](https://github.com/user-attachments/assets/3503539f-9d0c-48d8-b941-8b3b0b1cdf34)
-
-<!--
-Add screenshots of your app here!
-Example:
-![Home Screen](screenshots/home.png)
--->
+![Reminder_mail](https://github.com/user-attachments/assets/8a441c0f-f5e9-4264-9c4b-16cfb1613f1c)
 
 ---
 
@@ -58,8 +52,6 @@ Example:
 - Node.js (backend)
 - Express.js (backend)
 - MongoDB (database)
-- Nodemailer (for email reminders)
-- (Add/remove as needed)
 
 ---
 
@@ -74,15 +66,19 @@ Example:
 ```bash
 git clone https://github.com/amishabaraskar/accountable-todoapp.git
 cd accountable-todoapp
+cd client
+npm install
+cd server
 npm install
 ```
 
 ### Running the App
 
 ```bash
-npm run dev   # For Vite-based projects
-# or
-npm start     # For Create React App or similar setups
+cd client
+npm run dev   
+cd server
+nodemon index.js    
 ```
 
 ---
